@@ -1,4 +1,4 @@
-﻿namespace adastroAgentes.WebApi.Extensions
+﻿namespace CadastroAgentes.WebApi.Extensions
 {
     public class AppSettings
     {

@@ -14,18 +14,18 @@ namespace CadastroAgentes.WebApi.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    public class ClienteController : MainController
+    public class FornecedorController : MainController
     {
-        private readonly IClienteRepository _clienteRepository;
-        private readonly IClienteService _clienteService;
+        private readonly IFornecedorRepository _fornecedorRepository;
+        private readonly IFornecedorService _fornecedorService;
         private readonly IMapper _mapper;
 
-        public ClienteController(IClienteRepository clienteRepository, 
-                                 IClienteService clienteService,
+        public FornecedorController(IFornecedorRepository fornecedorRepository, 
+                                 IFornecedorService fornecedorService,
                                  IMapper mapper)
         {
-            _clienteRepository = clienteRepository;
-            _clienteService = clienteService;
+            _fornecedorRepository = fornecedorRepository;
+            _fornecedorService = fornecedorService;
             _mapper = mapper;
         }
 
@@ -36,7 +36,7 @@ namespace CadastroAgentes.WebApi.Controllers
             try
             {
                 
-                var result = _mapper.Map<IEnumerable<ClienteViewModel>>(await _clienteRepository.ObterTodos());
+                var result = _mapper.Map<IEnumerable<FornecedorViewModel>>(await _fornecedorRepository.ObterTodos());
                 return Ok(result);
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace CadastroAgentes.WebApi.Controllers
         {
             try
             {
-                var result = _mapper.Map<ClienteViewModel>(await _clienteRepository.ObterPorId(id));
+                var result = _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterPorId(id));
 
                 return Ok(result);
             }
@@ -60,18 +60,18 @@ namespace CadastroAgentes.WebApi.Controllers
             }
         }
 
-        //[ClaimsAuthorize("Cliente", "Adicionar")]
+        //[ClaimsAuthorize("Fornecedor", "Adicionar")]
         [HttpPost]
-        public async Task<IActionResult> Post(ClienteViewModel model)
+        public async Task<IActionResult> Post(FornecedorViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {
-                var cliente = _mapper.Map<Cliente>(model);
-                if (await _clienteService.Adicionar(cliente))
+                var fornecedor = _mapper.Map<Fornecedor>(model);
+                if (await _fornecedorService.Adicionar(fornecedor))
                 {
-                    return Created("", _mapper.Map<ClienteViewModel>(cliente));
+                    return Created("", _mapper.Map<FornecedorViewModel>(fornecedor));
                 }
             }
             catch (System.Exception ex)
@@ -82,22 +82,22 @@ namespace CadastroAgentes.WebApi.Controllers
             return BadRequest();
         }
 
-        //[ClaimsAuthorize("Cliente", "Alterar")]
+        //[ClaimsAuthorize("Fornecedor", "Alterar")]
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> Put(Guid id, ClienteViewModel model)
+        public async Task<IActionResult> Put(Guid id, FornecedorViewModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {
-                var cliente = await _clienteRepository.ObterPorId(id);
-                if (cliente == null) return NotFound();
+                var fornecedor = await _fornecedorRepository.ObterPorId(id);
+                if (fornecedor == null) return NotFound();
 
-                _mapper.Map(model, cliente);
+                _mapper.Map(model, fornecedor);
 
-                if (await _clienteService.Atualizar(cliente))
+                if (await _fornecedorService.Atualizar(fornecedor))
                 {
-                    return Created("", _mapper.Map<ClienteViewModel>(cliente));
+                    return Created("", _mapper.Map<FornecedorViewModel>(fornecedor));
                 }
             }
             catch (System.Exception ex)
@@ -109,16 +109,16 @@ namespace CadastroAgentes.WebApi.Controllers
 
         }
 
-        //[ClaimsAuthorize("Cliente", "Excluir")]
+        //[ClaimsAuthorize("Fornecedor", "Excluir")]
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             try
             {
-                var cliente = await _clienteRepository.ObterPorId(id);
+                var fornecedor = await _fornecedorRepository.ObterPorId(id);
 
-                if(cliente == null) return NotFound();
-                if (await _clienteService.Remover(id))
+                if(fornecedor == null) return NotFound();
+                if (await _fornecedorService.Remover(id))
                 {
                     return Ok();
                 }

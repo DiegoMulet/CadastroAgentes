@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroAgentes.Data.Migrations
 {
     [DbContext(typeof(CadastroAgentesContext))]
-    [Migration("20190903024826_Initial")]
-    partial class Initial
+    [Migration("20190904033053_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,6 +50,8 @@ namespace CadastroAgentes.Data.Migrations
 
                     b.Property<Guid?>("StatusId");
 
+                    b.Property<Guid?>("UsuarioAnalise");
+
                     b.HasKey("Id");
 
                     b.HasIndex("StatusId");
@@ -81,6 +83,8 @@ namespace CadastroAgentes.Data.Migrations
 
                     b.Property<Guid?>("StatusId");
 
+                    b.Property<Guid?>("UsuarioAnalise");
+
                     b.HasKey("Id");
 
                     b.HasIndex("StatusId");
@@ -107,25 +111,25 @@ namespace CadastroAgentes.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7f431c53-7bd4-4401-b952-48a068bbb86e"),
+                            Id = new Guid("eb1642e8-698d-4c49-8e0f-dcc73cad1710"),
                             Codigo = 1m,
                             Descricao = "Cadastro Prévio"
                         },
                         new
                         {
-                            Id = new Guid("e7822737-c55d-487a-80d5-3f2cd91ca510"),
+                            Id = new Guid("405a2544-7237-4741-804b-263976e2fc0a"),
                             Codigo = 2m,
                             Descricao = "Pendente"
                         },
                         new
                         {
-                            Id = new Guid("0a10a2d7-7532-4bd2-a947-9e87621fc5e2"),
+                            Id = new Guid("9b8892a7-a034-4654-bc07-82966911eaf2"),
                             Codigo = 3m,
                             Descricao = "Encaminhado"
                         },
                         new
                         {
-                            Id = new Guid("14c65317-a84f-4a7c-9fe5-9b3a3c68d54c"),
+                            Id = new Guid("007a9788-2206-453d-9fc5-38b54d1231df"),
                             Codigo = 4m,
                             Descricao = "Aprovado"
                         });

@@ -11,7 +11,7 @@ namespace CadastroAgentes.WebApi.ViewModels
         [Key]
         public Guid Id { get; set; }
 
-        public int Codigo { get; set; }
+        public int? Codigo { get; set; }
         public string Descricao { get; set; }
     }
 }

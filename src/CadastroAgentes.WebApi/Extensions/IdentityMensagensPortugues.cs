@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace adastroAgentes.WebApi.Extensions
+namespace CadastroAgentes.WebApi.Extensions
 {
     public class IdentityMensagensPortugues : IdentityErrorDescriber
     {

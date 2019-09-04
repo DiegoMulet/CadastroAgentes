@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace CadastroAgentes.WebApi.ViewModels
 {
-    public class ClienteViewModel
+    public class FornecedorViewModel
     {
 
         [Key]
@@ -19,14 +20,11 @@ namespace CadastroAgentes.WebApi.ViewModels
         public string Endereco { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime DataAbertura { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public float Altura { get; set; }
+        public int QtdFuncionarios { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public float Peso { get; set; }
-        
         public StatusViewModel Status { get; set; }
 
         public Guid? UsuarioAnalise { get; set; }

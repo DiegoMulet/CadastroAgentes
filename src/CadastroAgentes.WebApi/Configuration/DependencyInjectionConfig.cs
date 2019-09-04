@@ -22,6 +22,7 @@ namespace CadastroAgentes.WebApi.Configuration
             services.AddScoped<IStatusRepository,StatusRepository>();
 
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IFornecedorService, FornecedorService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

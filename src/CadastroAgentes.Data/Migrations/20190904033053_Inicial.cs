@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CadastroAgentes.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,6 +31,7 @@ namespace CadastroAgentes.Data.Migrations
                     Altura = table.Column<decimal>(type: "numeric(3,2)", nullable: false),
                     Peso = table.Column<decimal>(type: "numeric(6,3)", nullable: false),
                     StatusId = table.Column<Guid>(nullable: true),
+                    UsuarioAnalise = table.Column<Guid>(nullable: true),
                     DataTerminoAnalise = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
@@ -54,6 +55,7 @@ namespace CadastroAgentes.Data.Migrations
                     DataAbertura = table.Column<DateTime>(type: "datetime", nullable: false),
                     QtdFuncionarios = table.Column<decimal>(type: "numeric(10)", nullable: false),
                     StatusId = table.Column<Guid>(nullable: true),
+                    UsuarioAnalise = table.Column<Guid>(nullable: true),
                     DataTerminoAnalise = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
@@ -72,10 +74,10 @@ namespace CadastroAgentes.Data.Migrations
                 columns: new[] { "Id", "Codigo", "Descricao" },
                 values: new object[,]
                 {
-                    { new Guid("7f431c53-7bd4-4401-b952-48a068bbb86e"), 1m, "Cadastro Prévio" },
-                    { new Guid("e7822737-c55d-487a-80d5-3f2cd91ca510"), 2m, "Pendente" },
-                    { new Guid("0a10a2d7-7532-4bd2-a947-9e87621fc5e2"), 3m, "Encaminhado" },
-                    { new Guid("14c65317-a84f-4a7c-9fe5-9b3a3c68d54c"), 4m, "Aprovado" }
+                    { new Guid("eb1642e8-698d-4c49-8e0f-dcc73cad1710"), 1m, "Cadastro Prévio" },
+                    { new Guid("405a2544-7237-4741-804b-263976e2fc0a"), 2m, "Pendente" },
+                    { new Guid("9b8892a7-a034-4654-bc07-82966911eaf2"), 3m, "Encaminhado" },
+                    { new Guid("007a9788-2206-453d-9fc5-38b54d1231df"), 4m, "Aprovado" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -64,6 +64,8 @@ namespace CadastroAgentes.WebApi
                 app.UseCors("Production");
                 app.UseHsts();
             }
+            app.UseAuthentication();
+            app.UseMvcConfiguration();
             app.UseMvc();
         }
     }

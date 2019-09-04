@@ -9,6 +9,7 @@ namespace CadastroAgentes.WebApi.Configuration
         public AutomapperConfig()
         {
             CreateMap<Cliente, ClienteViewModel>().ReverseMap();
+            CreateMap<Fornecedor, FornecedorViewModel>().ReverseMap();
             CreateMap<Status, StatusViewModel>().ReverseMap();
         }
     }
