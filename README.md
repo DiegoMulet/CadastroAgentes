@@ -3,7 +3,8 @@
 # WebAPIRestful ASPNET Core 2.2
   Implementado toda parte de autorização com Identity e JWT
 
-# EntityFrameworkCore(com migrations)
+# EntityFrameworkCore
+  Com migrations
 
 # Angular 7
   Implementado com controle de autorização e rotas
