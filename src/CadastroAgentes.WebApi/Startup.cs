@@ -49,6 +49,7 @@ namespace CadastroAgentes.WebApi
                      options.SerializerSettings.NullValueHandling =
                          Newtonsoft.Json.NullValueHandling.Ignore;
                  });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +65,7 @@ namespace CadastroAgentes.WebApi
                 app.UseCors("Production");
                 app.UseHsts();
             }
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvcConfiguration();
             app.UseMvc();

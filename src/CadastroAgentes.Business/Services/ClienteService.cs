@@ -10,13 +10,18 @@ namespace CadastroAgentes.Business.Services
     public class ClienteService : BaseService, IClienteService
     {
         private readonly IClienteRepository _clienteRepository;
+        private readonly IStatusRepository _statusRepository;
 
-        public ClienteService(IClienteRepository clienteRepository)
+        public ClienteService(IClienteRepository clienteRepository,
+            IStatusRepository statusRepository)
         {
             _clienteRepository = clienteRepository;
+            _statusRepository = statusRepository;
         }
         public async Task<bool> Adicionar(Cliente cliente)
         {
+            var status = await _statusRepository.ObterPorCodigo((int)Status.CodigoStatus.CadastroPrevio);
+            cliente.StatusId = status.Id;
             _clienteRepository.Adicionar(cliente);
 
             return (await _clienteRepository.SaveChanges()) > 0;

@@ -1,0 +1,12 @@
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\bin\Debug\netcoreapp2.2\CadastroAgentes.Data.deps.json
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\bin\Debug\netcoreapp2.2\CadastroAgentes.Data.dll
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.csproj.CoreCompileInputs.cache
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.AssemblyInfoInputs.cache
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.AssemblyInfo.cs
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\bin\Debug\netcoreapp2.2\CadastroAgentes.Business.dll
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.csprojAssemblyReference.cache
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\bin\Debug\netcoreapp2.2\CadastroAgentes.Data.pdb
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\bin\Debug\netcoreapp2.2\CadastroAgentes.Business.pdb
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.csproj.CopyComplete
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.dll
+D:\Projetos\CadastroAgentes\CadastroAgentes\src\CadastroAgentes.Data\obj\Debug\netcoreapp2.2\CadastroAgentes.Data.pdb

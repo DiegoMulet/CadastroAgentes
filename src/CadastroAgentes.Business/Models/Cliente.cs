@@ -9,8 +9,8 @@ namespace CadastroAgentes.Business.Models
         public DateTime DataNascimento { get; set; }
         public float Altura { get; set; }
         public float Peso { get; set; }
-
         public Status Status { get; set; }
+        public Guid StatusId { get; set; }
         public Guid? UsuarioAnalise { get; set; }
         public DateTime? DataTerminoAnalise { get; set; }
     }
